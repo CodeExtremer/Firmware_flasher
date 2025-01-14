@@ -8,7 +8,8 @@ OUTFD=/proc/self/fd/$2
 ZIPFILE="$3"
 tmp=/dev/tmp
 
-chooseport() {
+chooseport() 
+{
   while true; do
     getevent -lc 1 2>&1 | grep VOLUME | grep " DOWN" > $tmp/events
     if (`cat $tmp/events 2>/dev/null | grep VOLUME >/dev/null`); then
